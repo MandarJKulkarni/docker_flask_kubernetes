@@ -1,6 +1,9 @@
 This is to demonstrate how to create a docker image for simple Flask app
 and deploy it on Kubernetes
 
+Requirements:
+	Have Docker and kubernetes installed.
+
 Commands to build docker image, tag it, push it
 	
 	docker build -t flaskapp .
