@@ -25,4 +25,4 @@ If you are deploying on a kubernetes cluster which has Istio, then you need to e
 	kubectl expose deployment flaskapp --type=ClusterIP --port 8080 --target-port 8080
 	
 and apply the gateway, virtual service for the app.
-	kubectl apply -f 
+	kubectl apply -f flask-productpage-gateway-vsvc.yml
