@@ -21,8 +21,16 @@ Then deploy it on k8s
 	
 Check the app is running by clicking on the load balancer service in K8S cluster
 
+For Istio:
+
 If you are deploying on a kubernetes cluster which has Istio, then you need to expose the deployment as ClusterIP
+	
 	kubectl expose deployment flaskapp --type=ClusterIP --port 8080 --target-port 8080
 	
-and apply the gateway, virtual service for the app.
+Apply the gateway, virtual service for the app.
+	
 	kubectl apply -f flask-productpage-gateway-vsvc.yml
+Add the service entries for google.com and time.jsontest.com
+
+	kubectl apply -f google-serviceentry.yml
+	kubectl apply -f time-jsontest-serviceentry.yml
