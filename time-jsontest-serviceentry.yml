@@ -1,0 +1,13 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: time-jsontest
+spec:
+  hosts:
+  - "time.jsontest.com"
+  location: MESH_EXTERNAL
+  ports:
+  - number: 80
+    name: http2
+    protocol: HTTP
+  resolution: NONE
