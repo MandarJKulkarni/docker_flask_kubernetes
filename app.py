@@ -3,7 +3,6 @@ from flask import Flask
 import requests
 
 import os
-import socket
 
 app = Flask(__name__)
 
@@ -16,5 +15,15 @@ def hello():
     html+="<h3>received "+str(resp.status_code)+" from http time.jsontest</h3>"
     return html
 
+@app.route("/productpage")
+def productpage():
+    html = "<h3>This is productpage</h3>"
+    return html
+
+@app.route("/api/v1/products")
+def productspage():
+    html = "<h3>This is api_v1_products page</h3>"
+    return html
+
 if __name__ == "__main__":
-  app.run(host='0.0.0.0', port=8080)
+  app.run(host='0.0.0.0', port=9080)
