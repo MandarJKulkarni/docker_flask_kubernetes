@@ -6,16 +6,16 @@ Requirements:
 
 Commands to build docker image, tag it, push it
 	
-	docker build -t flaskapp .
+	docker build -t flaskapp_withproductpage .
 	
-	docker tag flaskapp gcr.io/<GCP project ID>/flaskapp
+	docker tag flaskapp gcr.io/<GCP project ID>/flaskapp_withproductpage
 	
-	docker push gcr.io/data-ecosystem/flaskapp
+	docker push gcr.io/<GCP project ID>/flaskapp_withproductpage
 
 
 Then deploy it on k8s
 	
-	kubectl run flaskapp --image=gcr.io/<GCP project ID>/flaskapp --port 8080
+	kubectl run flaskapp-withproductpage --image=gcr.io/<GCP project ID>/flaskapp_withproductpage --port 8080
 	
 	kubectl apply -f .\flaskapp-withproductpage-svc.yml
 	
@@ -25,7 +25,7 @@ For Istio:
 
 If you are deploying on a kubernetes cluster which has Istio, then you need to expose the deployment as ClusterIP
 	
-	kubectl expose deployment flaskapp --type=ClusterIP --port 8080 --target-port 8080
+	kubectl apply -f .\flaskapp-withproductpage-svc.yml
 	
 Apply the gateway, virtual service for the app.
 	
