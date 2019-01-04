@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flaskapp-withproductpage
+  labels:
+    run: flaskapp-withproductpage
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    run: flaskapp-withproductpage
