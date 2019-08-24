@@ -34,3 +34,5 @@ Add the service entries for google.com and time.jsontest.com
 
 	kubectl apply -f google-serviceentry.yml
 	kubectl apply -f time-jsontest-serviceentry.yml
+#ToDo
+Add Istio ymls?
